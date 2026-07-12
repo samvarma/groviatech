@@ -4,6 +4,31 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---------- Apply site config (config.js) to the DOM ---------- */
+  /* Fills in WhatsApp links, Formspree action, and social links   */
+  /* from window.GROVIA_CONFIG so those values live in one place.  */
+  const cfg = window.GROVIA_CONFIG;
+  if(cfg){
+    document.querySelectorAll('[data-config="whatsapp-href"]').forEach(el => {
+      const params = el.getAttribute('data-whatsapp-params') || '';
+      el.setAttribute('href', `https://wa.me/${cfg.whatsappNumber}${params}`);
+    });
+    document.querySelectorAll('[data-config="formspree-action"]').forEach(el => {
+      el.setAttribute('action', `https://formspree.io/f/${cfg.formspreeId}`);
+    });
+    document.querySelectorAll('[data-config="email-href"]').forEach(el => {
+      el.setAttribute('href', `mailto:${cfg.email}`);
+    });
+    document.querySelectorAll('[data-config="email-text"]').forEach(el => {
+      el.textContent = cfg.email;
+    });
+    ['instagram', 'linkedin', 'twitter'].forEach(key => {
+      document.querySelectorAll(`[data-config="social-${key}"]`).forEach(el => {
+        el.setAttribute('href', cfg.social[key]);
+      });
+    });
+  }
+
   /* ---------- Sticky nav on scroll ---------- */
   const nav = document.querySelector('.nav');
   const onScroll = () => {

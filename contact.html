@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — GroviaTech</title>
 <meta name="description" content="Get in touch with GroviaTech to talk about social media automation, WhatsApp CRM, or business dashboards for your business.">
+<link rel="canonical" href="https://groviatech.in/contact.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#090c12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GroviaTech">
+<meta property="og:title" content="Contact — GroviaTech">
+<meta property="og:description" content="Get in touch with GroviaTech to talk about social media automation, WhatsApp CRM, or business dashboards for your business.">
+<meta property="og:url" content="https://groviatech.in/contact.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact — GroviaTech">
+<meta name="twitter:description" content="Get in touch with GroviaTech to talk about social media automation, WhatsApp CRM, or business dashboards for your business.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -24,7 +35,7 @@
     </div>
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-ghost btn-sm">Get in touch</a>
-      <a href="https://wa.me/910000000000" target="_blank" class="btn btn-whatsapp btn-sm">WhatsApp Us</a>
+      <a href="#" target="_blank" class="btn btn-whatsapp btn-sm" data-config="whatsapp-href">WhatsApp Us</a>
     </div>
     <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -53,10 +64,12 @@
       <h3 style="margin-bottom:24px;">Send a message</h3>
       <!--
         This form uses Formspree (formspree.io) as a no-backend form handler.
-        Replace YOUR_FORM_ID below with your real Formspree form ID once you sign up (free tier available),
-        or swap the action to any other form endpoint (e.g. Web3Forms, Basin, your own backend).
+        The action attribute below is filled in by js/config.js from
+        window.GROVIA_CONFIG.formspreeId — edit that ONE value in
+        js/config.js once you have a real Formspree form ID (free tier
+        available), no need to touch this HTML again.
       -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form action="#" method="POST" data-config="formspree-action">
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -92,7 +105,7 @@
         <div class="icon-box">💬</div>
         <h3 style="font-size:16px;">WhatsApp</h3>
         <p style="margin-bottom:14px;">Fastest way to reach me — usually a reply within a few hours.</p>
-        <a href="https://wa.me/910000000000" target="_blank" class="btn btn-whatsapp btn-sm">Chat on WhatsApp</a>
+        <a href="#" target="_blank" class="btn btn-whatsapp btn-sm" data-config="whatsapp-href">Chat on WhatsApp</a>
       </div>
       <div class="card" style="margin-bottom:16px;">
         <div class="icon-box">✉️</div>
@@ -116,9 +129,9 @@
         <a href="index.html" class="logo"><span class="logo-mark">G</span>GroviaTech</a>
         <p>Social media automation, WhatsApp CRM, and business dashboards for growing businesses.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Instagram">Ig</a>
-          <a href="#" aria-label="LinkedIn">In</a>
-          <a href="#" aria-label="X / Twitter">X</a>
+          <a href="#" aria-label="Instagram" data-config="social-instagram">Ig</a>
+          <a href="#" aria-label="LinkedIn" data-config="social-linkedin">In</a>
+          <a href="#" aria-label="X / Twitter" data-config="social-twitter">X</a>
         </div>
       </div>
       <div class="footer-col">
@@ -137,7 +150,7 @@
       <div class="footer-col">
         <h4>Get in touch</h4>
         <a href="mailto:hello@groviatech.in">hello@groviatech.in</a>
-        <a href="https://wa.me/910000000000" target="_blank">WhatsApp</a>
+        <a href="#" target="_blank" data-config="whatsapp-href">WhatsApp</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -147,6 +160,7 @@
   </div>
 </footer>
 
+<script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
