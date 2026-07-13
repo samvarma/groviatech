@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://groviatech.in/sitemap.xml

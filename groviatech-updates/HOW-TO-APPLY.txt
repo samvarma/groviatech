@@ -1,0 +1,60 @@
+GroviaTech — code updates to apply
+===================================
+
+I don't have push access to your GitHub repo, so these are ready-made
+files, not a live commit. Drop them into your local clone and push —
+Netlify will redeploy automatically since it's connected to GitHub.
+
+FILES IN THIS FOLDER (all go in the repo ROOT, same paths):
+  index.html          (updated)
+  about.html          (updated)
+  services.html       (updated)
+  portfolio.html      (updated)
+  blog.html           (updated)
+  blog-post.html      (updated)
+  contact.html        (updated)
+  js/config.js         (NEW — single place for real values)
+  js/main.js           (updated — now reads js/config.js)
+  robots.txt           (NEW)
+  sitemap.xml           (NEW)
+  favicon.svg           (NEW)
+
+STEPS
+-----
+1. Copy all files/folders above into your local groviatech repo,
+   overwriting the existing ones with the same name.
+2. In a terminal, inside the repo:
+     git add .
+     git commit -m "Wire up contact form/WhatsApp/social config, add SEO basics"
+     git push
+3. Netlify auto-deploys on push — check the Netlify dashboard for the
+   build to go green (~30 sec for a static site).
+
+ONE FILE TO EDIT LATER: js/config.js
+-------------------------------------
+When you have the real values, edit ONLY js/config.js:
+  - whatsappNumber → your WhatsApp Business number (digits only, intl format)
+  - formspreeId     → your Formspree form ID (sign up free at formspree.io)
+  - social.instagram / linkedin / twitter → your profile URLs
+
+Every page pulls from this one file now — no more hunting through 7 HTML
+files to update a phone number.
+
+WHAT ELSE CHANGED
+------------------
+- Every page head now has: canonical URL, Open Graph + Twitter card tags,
+  and a favicon (favicon.svg) — assumes the live domain is groviatech.in.
+  If you end up on a different domain, find/replace groviatech.in across
+  the HTML files.
+- robots.txt + sitemap.xml added at root so Google can index the site.
+  blog-post.html is intentionally left OUT of the sitemap — it's marked
+  in the file itself as a reusable template for future posts, not a real
+  page.
+- No visual/design changes — CSS is untouched.
+
+STILL WORTH DOING (not code — Netlify dashboard / DNS)
+--------------------------------------------------------
+- Point groviatech.in's DNS at Netlify and add it as a custom domain
+  (Netlify auto-provisions HTTPS once DNS is verified).
+- In Netlify: Site settings → Forms, or just use Formspree as already
+  wired in — either works with a static site like this.
