@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.querySelectorAll('[data-config="email-href"]').forEach(el => {
       el.setAttribute('href', `mailto:${cfg.email}`);
-    });
-    document.querySelectorAll('[data-config="email-text"]').forEach(el => {
       el.textContent = cfg.email;
     });
     ['instagram', 'linkedin', 'twitter'].forEach(key => {

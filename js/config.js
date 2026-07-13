@@ -8,10 +8,10 @@
 window.GROVIA_CONFIG = {
   // WhatsApp Business number, international format, digits only
   // (no +, no spaces, no dashes). e.g. "919876543210"
-  whatsappNumber: "910000000000", // TODO: replace with real number
+  whatsappNumber: "919515339828",
 
   // Contact email shown in the footer / contact page
-  email: "hello@groviatech.in",
+  email: "info.groviatech@gmail.com",
 
   // Formspree form ID (sign up free at https://formspree.io)
   // Used by the contact form on contact.html
