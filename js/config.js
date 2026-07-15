@@ -13,14 +13,13 @@ window.GROVIA_CONFIG = {
   // Contact email shown in the footer / contact page
   email: "info.groviatech@gmail.com",
 
-  // Formspree form ID (sign up free at https://formspree.io)
-  // Used by the contact form on contact.html
-  formspreeId: "YOUR_FORM_ID", // TODO: replace with real Formspree form ID
+  // The contact form on contact.html submits via Netlify Forms
+  // (built into hosting, no ID/account needed here).
 
-  // Social profile URLs — leave "#" to hide/disable a link
+  // Social profile URLs — leave "#" to hide the icon until you have a real link
   social: {
-    instagram: "#", // TODO
-    linkedin: "#",  // TODO
-    twitter: "#"    // TODO
+    instagram: "#", // TODO: add real profile URL to show this icon
+    linkedin: "#",  // TODO: add real profile URL to show this icon
+    twitter: "#"    // TODO: add real profile URL to show this icon
   }
 };

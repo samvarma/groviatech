@@ -5,24 +5,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Apply site config (config.js) to the DOM ---------- */
-  /* Fills in WhatsApp links, Formspree action, and social links   */
-  /* from window.GROVIA_CONFIG so those values live in one place.  */
+  /* Fills in WhatsApp links, email links, and social links from   */
+  /* window.GROVIA_CONFIG so those values live in one place.       */
   const cfg = window.GROVIA_CONFIG;
   if(cfg){
     document.querySelectorAll('[data-config="whatsapp-href"]').forEach(el => {
       const params = el.getAttribute('data-whatsapp-params') || '';
       el.setAttribute('href', `https://wa.me/${cfg.whatsappNumber}${params}`);
     });
-    document.querySelectorAll('[data-config="formspree-action"]').forEach(el => {
-      el.setAttribute('action', `https://formspree.io/f/${cfg.formspreeId}`);
-    });
     document.querySelectorAll('[data-config="email-href"]').forEach(el => {
       el.setAttribute('href', `mailto:${cfg.email}`);
       el.textContent = cfg.email;
     });
+    /* Social links: hide the icon entirely until a real profile URL */
+    /* replaces the "#" placeholder in config.js, instead of shipping */
+    /* a dead link that looks live. */
     ['instagram', 'linkedin', 'twitter'].forEach(key => {
       document.querySelectorAll(`[data-config="social-${key}"]`).forEach(el => {
-        el.setAttribute('href', cfg.social[key]);
+        const url = cfg.social[key];
+        if(!url || url === '#'){
+          el.style.display = 'none';
+        } else {
+          el.setAttribute('href', url);
+        }
       });
     });
   }
