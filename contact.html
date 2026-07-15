@@ -66,13 +66,17 @@
     <div class="card reveal">
       <h3 style="margin-bottom:24px;">Send a message</h3>
       <!--
-        This form uses Formspree (formspree.io) as a no-backend form handler.
-        The action attribute below is filled in by js/config.js from
-        window.GROVIA_CONFIG.formspreeId — edit that ONE value in
-        js/config.js once you have a real Formspree form ID (free tier
-        available), no need to touch this HTML again.
+        This form uses Netlify Forms — no external account needed since the
+        site is already hosted on Netlify. Netlify's build bot detects this
+        form automatically (thanks to data-netlify + the hidden form-name
+        field) and submissions appear under Site → Forms in the Netlify
+        dashboard, with optional email notifications configurable there.
       -->
-      <form action="#" method="POST" data-config="formspree-action">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
