@@ -1,8 +1,8 @@
 // ============================================================
 // GroviaTech.in — SITE CONFIG
 // Edit the values below only. Every page reads from here, so a
-// real WhatsApp number / Formspree ID / social link only needs
-// to be entered ONCE, instead of hunting through 7 HTML files.
+// real WhatsApp number / social link only needs to be entered
+// ONCE here, instead of hunting through every HTML file.
 // ============================================================
 
 window.GROVIA_CONFIG = {
